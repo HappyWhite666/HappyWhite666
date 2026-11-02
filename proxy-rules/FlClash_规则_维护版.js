@@ -220,6 +220,12 @@ const MY_RULES = [
   "DOMAIN-SUFFIX,rutracker.net,MY_PROXY",
 
   // ========================================
+  // FitGirl and DODI Repacks website routing
+  // ========================================
+  "DOMAIN-SUFFIX,fitgirl-repacks.site,MY_PROXY",
+  "DOMAIN-SUFFIX,dodi-repacks.site,MY_PROXY",
+
+  // ========================================
   // Z-Library related domains / mirrors
   // Domains change frequently; keep this section easy to update.
   // ========================================

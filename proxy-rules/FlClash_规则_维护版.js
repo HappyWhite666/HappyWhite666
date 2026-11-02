@@ -226,6 +226,57 @@ const MY_RULES = [
   "DOMAIN-SUFFIX,dodi-repacks.site,MY_PROXY",
 
   // ========================================
+  // Epic Games: known large download hosts go DIRECT before website rules
+  // ========================================
+  "DOMAIN,epicgames-download1.akamaized.net,DIRECT",
+  "DOMAIN,fastly-download.epicgames.com,DIRECT",
+  "DOMAIN,download.epicgames.com,DIRECT",
+  "DOMAIN,download2.epicgames.com,DIRECT",
+  "DOMAIN,download3.epicgames.com,DIRECT",
+  "DOMAIN,download4.epicgames.com,DIRECT",
+
+  // ========================================
+  // AI assistants
+  // ========================================
+  "DOMAIN-SUFFIX,claude.ai,MY_PROXY",
+  "DOMAIN-SUFFIX,claude.com,MY_PROXY",
+  "DOMAIN-SUFFIX,anthropic.com,MY_PROXY",
+  "DOMAIN-SUFFIX,perplexity.ai,MY_PROXY",
+  "DOMAIN-SUFFIX,poe.com,MY_PROXY",
+
+  // ========================================
+  // AI development
+  // ========================================
+  "DOMAIN-SUFFIX,huggingface.co,MY_PROXY",
+  "DOMAIN-SUFFIX,cursor.com,MY_PROXY",
+  "DOMAIN-SUFFIX,githubcopilot.com,MY_PROXY",
+
+  // ========================================
+  // Research and LaTeX
+  // ========================================
+  "DOMAIN-SUFFIX,arxiv.org,MY_PROXY",
+  "DOMAIN-SUFFIX,openreview.net,MY_PROXY",
+  "DOMAIN-SUFFIX,semanticscholar.org,MY_PROXY",
+  "DOMAIN-SUFFIX,overleaf.com,MY_PROXY",
+
+  // ========================================
+  // Game stores and accounts
+  // ========================================
+  "DOMAIN-SUFFIX,epicgames.com,MY_PROXY",
+  "DOMAIN-SUFFIX,rockstargames.com,MY_PROXY",
+  "DOMAIN-SUFFIX,gog.com,MY_PROXY",
+  "DOMAIN-SUFFIX,ea.com,MY_PROXY",
+  "DOMAIN-SUFFIX,ubisoft.com,MY_PROXY",
+
+  // ========================================
+  // Music, video, reviews and archives
+  // ========================================
+  "DOMAIN-SUFFIX,spotify.com,MY_PROXY",
+  "DOMAIN-SUFFIX,netflix.com,MY_PROXY",
+  "DOMAIN-SUFFIX,letterboxd.com,MY_PROXY",
+  "DOMAIN-SUFFIX,archive.org,MY_PROXY",
+
+  // ========================================
   // Z-Library related domains / mirrors
   // Domains change frequently; keep this section easy to update.
   // ========================================

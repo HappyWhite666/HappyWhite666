@@ -9,10 +9,12 @@ Shadowrocket and FlClash/Mihomo domain-based routing rules. This directory only 
 - FlClash remote updater (import once): https://raw.githubusercontent.com/HappyWhite666/HappyWhite666/main/proxy-rules/FlClash_远程更新版.js
 - Mihomo rule providers: rules/direct.yaml and rules/proxy.yaml (refreshed by Mihomo every 86400 seconds).
 
-The rule policy is selected websites -> PROXY, everything else -> DIRECT. qBittorrent process traffic is DIRECT when processed by Mihomo; this is distinct from routing torrent index websites. Steam download CDN domains remain DIRECT.
+Shadowrocket uses Geph-style split routing. Local traffic, recognized mainland China destinations, and listed Steam and Epic download CDNs go direct. Explicit service rules take priority over the mainland China domain set and GeoIP check. Unmatched destinations use the selected proxy. BitTorrent connections handled by Shadowrocket follow these destination rules.
+
+FlClash/Mihomo proxies selected websites and sends unmatched destinations direct. Mihomo routes qBittorrent process traffic and the listed Steam download CDNs direct.
 
 For FlClash, keep your proxy-node subscription, import the remote updater JS as a script override, select a working MY_PROXY node, and enable Rule mode. The JS bootstrap itself is not automatically refreshed, but rule providers are.
 
-For Shadowrocket, import the .conf as a remote configuration and use its refresh function; configure a matching PROXY destination separately.
+For Shadowrocket, import or refresh the remote `.conf`, select a proxy node, and set Global Routing to **Config**.
 
 Google Drive backup copies and GitHub are not automatically synchronized with one another.

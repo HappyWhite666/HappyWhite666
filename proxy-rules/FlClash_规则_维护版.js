@@ -23,6 +23,14 @@ const MY_RULES = [
   "IP-CIDR6,fc00::/7,DIRECT,no-resolve",
   "IP-CIDR6,fe80::/10,DIRECT,no-resolve",
 
+  "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+  "DOMAIN-SUFFIX,windows.com,DIRECT",
+  "DOMAIN-SUFFIX,windowsupdate.com,DIRECT",
+  "DOMAIN-SUFFIX,msftconnecttest.com,DIRECT",
+  "DOMAIN-SUFFIX,msftncsi.com,DIRECT",
+  "DOMAIN-SUFFIX,live.com,DIRECT",
+  "DOMAIN-SUFFIX,msftauth.net,DIRECT",
+
   "PROCESS-NAME-WILDCARD,*codex*.exe,MY_PROXY",
   "PROCESS-NAME,Signal.exe,MY_PROXY",
 

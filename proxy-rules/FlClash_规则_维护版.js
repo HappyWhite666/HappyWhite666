@@ -5,6 +5,7 @@
 // Use Rule mode. Select a working proxy in the MY_PROXY group.
 
 const MY_RULES = [
+  "PROCESS-NAME-WILDCARD,geph*.exe,DIRECT",
   // qBittorrent traffic direct when its connections reach the Mihomo core.
   "PROCESS-NAME,qbittorrent.exe,DIRECT",
   // Private networks corresponding to Shadowrocket skip-proxy intent.
@@ -14,8 +15,16 @@ const MY_RULES = [
   "DOMAIN-SUFFIX,internal,DIRECT",
   "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
   "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+  "IP-CIDR,100.64.0.0/10,DIRECT,no-resolve",
+  "IP-CIDR,169.254.0.0/16,DIRECT,no-resolve",
   "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
   "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+  "IP-CIDR6,::1/128,DIRECT,no-resolve",
+  "IP-CIDR6,fc00::/7,DIRECT,no-resolve",
+  "IP-CIDR6,fe80::/10,DIRECT,no-resolve",
+
+  "PROCESS-NAME-WILDCARD,*codex*.exe,MY_PROXY",
+  "PROCESS-NAME,Signal.exe,MY_PROXY",
 
   // ========================================
   // OpenAI / ChatGPT
@@ -300,9 +309,11 @@ const MY_RULES = [
   "DOMAIN-SUFFIX,fuckfbi.ru,MY_PROXY",
 
   // ========================================
-  // Everything else goes DIRECT
+  // Mainland China bypass and proxy fallback
   // ========================================
-  "MATCH,DIRECT",
+  "GEOSITE,cn,DIRECT",
+  "GEOIP,CN,DIRECT",
+  "MATCH,MY_PROXY",
 ];
 
 function main(config) {
@@ -319,8 +330,9 @@ function main(config) {
   if (providers.length > 0) myGroup.use = providers;
   // Keep the subscription node definitions and existing groups intact.
   config["proxy-groups"] = [...groups.filter(g => g.name !== "MY_PROXY"), myGroup];
-  // Replace subscriber routing with the personal rules, including MATCH,DIRECT.
+  // Replace subscriber routing with the personal rules.
   // The script is re-applied every time the subscription is refreshed.
+  config["find-process-mode"] = "always";
   config.rules = [...MY_RULES];
   return config;
 }

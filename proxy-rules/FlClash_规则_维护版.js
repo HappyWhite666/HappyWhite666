@@ -32,6 +32,7 @@ const MY_RULES = [
   "DOMAIN-SUFFIX,msftauth.net,DIRECT",
 
   "PROCESS-NAME-WILDCARD,*codex*.exe,MY_PROXY",
+  "PROCESS-NAME,ChatGPT.exe,MY_PROXY",
   "PROCESS-NAME,Signal.exe,MY_PROXY",
 
   // ========================================
